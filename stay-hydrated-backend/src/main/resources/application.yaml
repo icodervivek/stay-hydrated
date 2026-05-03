@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: stay-hydrated-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/stay_hydrated
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        type:
+          preferred_uuid_jdbc_type: CHAR
+
+app:
+  jwt:
+    secret: "stay-hydrated-super-secret-jwt-key-min-32-chars-long"
+    access-token-expiry-ms: 900000
+    refresh-token-expiry-days: 7
