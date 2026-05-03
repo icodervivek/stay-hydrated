@@ -6,7 +6,7 @@ A full-stack mobile app for tracking daily water intake, built with **React Nati
 
 ## High-Level Architecture Diagram (HLD)
 
-![alt text](<architecture flowchart diagram.png>)
+![alt text](<High-Level Architecture Diagram (HLD)-1.png>)
 
 ## Features
 
