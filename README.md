@@ -6,7 +6,7 @@ A full-stack mobile app for tracking daily water intake, built with **React Nati
 
 ## High-Level Architecture Diagram (HLD)
 
-![alt text](<High-Level Architecture Diagram (HLD)-1.png>)
+![alt text](<High-Level Architecture Diagram (HLD).png>)
 
 ## Features
 
@@ -23,27 +23,29 @@ A full-stack mobile app for tracking daily water intake, built with **React Nati
 ## Tech Stack
 
 ### Frontend
-| | |
-|---|---|
-| Framework | React Native + Expo (SDK, file-based routing via `expo-router`) |
-| Language | TypeScript |
-| HTTP | Axios with request/response interceptors |
-| State | Zustand (`auth-store`) |
-| Storage | `expo-secure-store` |
-| Images | `expo-image`, `expo-image-picker` |
-| AI | Groq API — `meta-llama/llama-4-scout-17b-16e-instruct` |
-| Image hosting | Cloudinary (unsigned upload preset) |
-| UI extras | `expo-linear-gradient`, `react-native-svg`, `react-native-view-shot`, `expo-sharing` |
+
+|               |                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------ |
+| Framework     | React Native + Expo (SDK, file-based routing via `expo-router`)                      |
+| Language      | TypeScript                                                                           |
+| HTTP          | Axios with request/response interceptors                                             |
+| State         | Zustand (`auth-store`)                                                               |
+| Storage       | `expo-secure-store`                                                                  |
+| Images        | `expo-image`, `expo-image-picker`                                                    |
+| AI            | Groq API — `meta-llama/llama-4-scout-17b-16e-instruct`                               |
+| Image hosting | Cloudinary (unsigned upload preset)                                                  |
+| UI extras     | `expo-linear-gradient`, `react-native-svg`, `react-native-view-shot`, `expo-sharing` |
 
 ### Backend
-| | |
-|---|---|
-| Framework | Spring Boot 4.0.6 |
-| Language | Java 17 |
-| Database | MySQL 8 |
-| ORM | Spring Data JPA / Hibernate |
-| Security | Spring Security + JJWT 0.12.6 |
-| Utilities | Lombok, Spring Validation |
+
+|           |                               |
+| --------- | ----------------------------- |
+| Framework | Spring Boot 4.0.6             |
+| Language  | Java 17                       |
+| Database  | MySQL 8                       |
+| ORM       | Spring Data JPA / Hibernate   |
+| Security  | Spring Security + JJWT 0.12.6 |
+| Utilities | Lombok, Spring Validation     |
 
 ---
 
@@ -91,6 +93,7 @@ stay-hydrated/
 ### Backend Setup
 
 1. Create the database:
+
    ```sql
    CREATE DATABASE stay_hydrated;
    ```
@@ -109,12 +112,14 @@ stay-hydrated/
 ### Frontend Setup
 
 1. Install dependencies:
+
    ```bash
    cd stay-hydrated-frontend
    npm install
    ```
 
 2. Set your credentials in `src/app/constants/env.ts`:
+
    ```ts
    export const GROQ_API_KEY = "<your-groq-api-key>";
    export const CLOUDINARY_CLOUD_NAME = "<your-cloud-name>";
@@ -122,9 +127,11 @@ stay-hydrated/
    ```
 
 3. Set your backend URL in `src/app/api/client.ts`:
+
    ```ts
    export const BASE_URL = "http://<your-local-ip>:8080/api";
    ```
+
    Use your machine's LAN IP (not `localhost`) so the device/emulator can reach the backend.
 
 4. Start the Expo dev server:
@@ -139,33 +146,33 @@ stay-hydrated/
 
 All endpoints are prefixed with `/api`. Protected routes require `Authorization: Bearer <accessToken>`.
 
-| Method | Path | Auth | Description |
-|--------|------|------|-------------|
-| POST | `/auth/register` | No | Create account |
-| POST | `/auth/login` | No | Get access + refresh tokens |
-| POST | `/auth/refresh` | No | Rotate tokens using refresh token |
-| POST | `/auth/logout` | No | Invalidate refresh token |
-| GET | `/dashboard` | Yes | Today's summary (goal, intake, streak) |
-| POST | `/intake` | Yes | Log a water intake entry |
-| GET | `/intake/history` | Yes | Paginated intake history |
-| GET | `/stats/today` | Yes | Today's detailed stats |
-| GET | `/stats/weekly` | Yes | Last 7 days bar-chart data |
-| GET | `/achievements` | Yes | All achievements with earned status |
-| GET | `/goal` | Yes | Current daily goal |
-| PUT | `/goal` | Yes | Update daily goal |
-| GET | `/profile` | Yes | User profile |
-| PUT | `/profile` | Yes | Update display name / avatar |
-| GET | `/preferences` | Yes | Notification preferences |
-| PUT | `/preferences` | Yes | Update preferences |
+| Method | Path              | Auth | Description                            |
+| ------ | ----------------- | ---- | -------------------------------------- |
+| POST   | `/auth/register`  | No   | Create account                         |
+| POST   | `/auth/login`     | No   | Get access + refresh tokens            |
+| POST   | `/auth/refresh`   | No   | Rotate tokens using refresh token      |
+| POST   | `/auth/logout`    | No   | Invalidate refresh token               |
+| GET    | `/dashboard`      | Yes  | Today's summary (goal, intake, streak) |
+| POST   | `/intake`         | Yes  | Log a water intake entry               |
+| GET    | `/intake/history` | Yes  | Paginated intake history               |
+| GET    | `/stats/today`    | Yes  | Today's detailed stats                 |
+| GET    | `/stats/weekly`   | Yes  | Last 7 days bar-chart data             |
+| GET    | `/achievements`   | Yes  | All achievements with earned status    |
+| GET    | `/goal`           | Yes  | Current daily goal                     |
+| PUT    | `/goal`           | Yes  | Update daily goal                      |
+| GET    | `/profile`        | Yes  | User profile                           |
+| PUT    | `/profile`        | Yes  | Update display name / avatar           |
+| GET    | `/preferences`    | Yes  | Notification preferences               |
+| PUT    | `/preferences`    | Yes  | Update preferences                     |
 
 ---
 
 ## External Services
 
-| Service | Purpose | How to get credentials |
-|---------|---------|----------------------|
-| [Groq](https://console.groq.com) | AI vision — verifies photo contains a drink | Create account → API Keys |
-| [Cloudinary](https://cloudinary.com) | Image hosting for intake photos | Dashboard → Settings → Upload → Add unsigned preset |
+| Service                              | Purpose                                     | How to get credentials                              |
+| ------------------------------------ | ------------------------------------------- | --------------------------------------------------- |
+| [Groq](https://console.groq.com)     | AI vision — verifies photo contains a drink | Create account → API Keys                           |
+| [Cloudinary](https://cloudinary.com) | Image hosting for intake photos             | Dashboard → Settings → Upload → Add unsigned preset |
 
 Both services are **optional**. The app falls back to logging without a photo if credentials are not set.
 
@@ -175,22 +182,22 @@ Both services are **optional**. The app falls back to logging without a photo if
 
 ### Frontend — `src/app/constants/env.ts`
 
-| Variable | Description |
-|----------|-------------|
-| `GROQ_API_KEY` | Groq API key for vision model calls |
-| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name |
+| Variable                   | Description                            |
+| -------------------------- | -------------------------------------- |
+| `GROQ_API_KEY`             | Groq API key for vision model calls    |
+| `CLOUDINARY_CLOUD_NAME`    | Cloudinary cloud name                  |
 | `CLOUDINARY_UPLOAD_PRESET` | Unsigned Cloudinary upload preset name |
 
 ### Backend — `src/main/resources/application.yaml`
 
-| Key | Default | Description |
-|-----|---------|-------------|
-| `spring.datasource.url` | `jdbc:mysql://localhost:3306/stay_hydrated` | MySQL connection string |
-| `spring.datasource.username` | `root` | DB username |
-| `spring.datasource.password` | `password` | DB password |
-| `app.jwt.secret` | *(set in yaml)* | HS256 signing secret (min 32 chars) |
-| `app.jwt.access-token-expiry-ms` | `900000` | Access token lifetime (15 min) |
-| `app.jwt.refresh-token-expiry-days` | `7` | Refresh token lifetime |
+| Key                                 | Default                                     | Description                         |
+| ----------------------------------- | ------------------------------------------- | ----------------------------------- |
+| `spring.datasource.url`             | `jdbc:mysql://localhost:3306/stay_hydrated` | MySQL connection string             |
+| `spring.datasource.username`        | `root`                                      | DB username                         |
+| `spring.datasource.password`        | `password`                                  | DB password                         |
+| `app.jwt.secret`                    | _(set in yaml)_                             | HS256 signing secret (min 32 chars) |
+| `app.jwt.access-token-expiry-ms`    | `900000`                                    | Access token lifetime (15 min)      |
+| `app.jwt.refresh-token-expiry-days` | `7`                                         | Refresh token lifetime              |
 
 ---
 
