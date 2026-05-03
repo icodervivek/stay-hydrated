@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(yaml|yml|properties\\)$\")",
+      "PowerShell(Get-ChildItem -Path \"D:\\\\IntelliJ\\\\stay-hydrated\\\\stay-hydrated-frontend\\\\assets\" -Recurse -File | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"D:\\\\IntelliJ\\\\stay-hydrated\\\\stay-hydrated-frontend\\\\\"\\), \"\" } | Sort-Object)",
+      "Bash(npx expo *)",
+      "Bash(npm install *)",
+      "Bash(cd /d \"D:\\\\IntelliJ\\\\stay-hydrated\\\\stay-hydrated-backend\")",
+      "Bash(Get-ChildItem -Recurse -Filter \"*.java\")",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-Content *)",
+      "Bash(Select-String -Path \"D:\\\\IntelliJ\\\\stay-hydrated\\\\stay-hydrated-frontend\\\\src\\\\app\\\\constants\\\\svg-assets.ts\" -Pattern \"^export const BADGE_\")",
+      "Bash(Select-Object -ExpandProperty Line)"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="bp-drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+    <linearGradient id="bp-star" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <radialGradient id="bp-glow">
+      <stop offset="0%" stop-color="rgba(14,165,233,0.4)"/>
+      <stop offset="100%" stop-color="rgba(14,165,233,0)"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="url(#bp-glow)"/>
+  <g transform="translate(100 100)">
+    <polygon points="0,-78 22,-72 40,-82 38,-60 56,-46 36,-40 28,-22 8,-30 -8,-30 -28,-22 -36,-40 -56,-46 -38,-60 -40,-82 -22,-72" fill="url(#bp-bg)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="60" fill="url(#bp-bg)" stroke="#FFFFFF" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3"/>
+    <g transform="translate(0 4)">
+      <path d="M 0 -34 C 0 -34 -22 -8 -22 12 a 22 22 0 0 0 44 0 C 22 -8 0 -34 0 -34 Z" fill="url(#bp-drop)" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M -10 6 q 0 12 10 14" stroke="rgba(14,165,233,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(20 -20)">
+      <path d="M 0 -8 l 2.5 5 l 5.5 0.8 l -4 4 l 1 5.5 l -5 -2.7 l -5 2.7 l 1 -5.5 l -4 -4 l 5.5 -0.8 z" fill="url(#bp-star)" stroke="#FFFFFF" stroke-width="1"/>
+    </g>
+    <text x="0" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">HYDRATION PRO</text>
+  </g>
+</svg>

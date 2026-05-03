@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="wm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="wm-wave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#67E8F9"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <radialGradient id="wm-glow">
+      <stop offset="0%" stop-color="rgba(34,211,238,0.45)"/>
+      <stop offset="100%" stop-color="rgba(34,211,238,0)"/>
+    </radialGradient>
+    <clipPath id="wm-clip">
+      <circle cx="100" cy="100" r="60"/>
+    </clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="url(#wm-glow)"/>
+  <g transform="translate(100 100)">
+    <polygon points="0,-78 22,-72 40,-82 32,-58 50,-44 28,-38 22,-22 0,-30 -22,-22 -28,-38 -50,-44 -32,-58 -40,-82 -22,-72" fill="url(#wm-bg)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="60" fill="url(#wm-bg)" stroke="#FFFFFF" stroke-width="3.5"/>
+  </g>
+  <g clip-path="url(#wm-clip)">
+    <path d="M 30 110 q 17.5 -22 35 0 t 35 0 t 35 0 t 35 0 v 60 h -140 z" fill="url(#wm-wave)"/>
+    <path d="M 30 124 q 17.5 -16 35 0 t 35 0 t 35 0 t 35 0 v 60 h -140 z" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="80" cy="100" r="3" fill="rgba(255,255,255,0.7)"/>
+    <circle cx="120" cy="105" r="2" fill="rgba(255,255,255,0.7)"/>
+    <circle cx="100" cy="115" r="2.5" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  <g transform="translate(100 100)">
+    <text x="0" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">WAVE MAKER</text>
+  </g>
+</svg>
