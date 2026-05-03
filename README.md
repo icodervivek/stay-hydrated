@@ -4,6 +4,10 @@ A full-stack mobile app for tracking daily water intake, built with **React Nati
 
 ---
 
+## High-Level Architecture Diagram (HLD)
+
+![alt text](<architecture flowchart diagram.png>)
+
 ## Features
 
 - **Dashboard** — animated water bottle that fills as you log intake, daily goal progress, current streak, and best streak
